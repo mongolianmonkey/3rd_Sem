@@ -76,7 +76,7 @@ foremost -v -t jpg -i /dev/sda1 -o output
 -pipal -o "filename" pass.txt
 
 7(b) Cutycapt
-cutycapt -url=https://www.rvce.edu.in --out=outt.png
+cutycapt --url=https://www.rvce.edu.in --out=outt.png
 
 8(a)Netdiscover
 sudo netdiscover -r "ip address"
