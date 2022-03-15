@@ -81,7 +81,10 @@ cutycapt --url=https://www.rvce.edu.in --out=outt.png
 8(a)Netdiscover
 sudo netdiscover -r "ip address"
 
-8(b)Sqlmap
+8(b)pdf-parser
+pdf-parser -a "pdfname"
+pdf-parser -o "pdfname"
+pdf-parser -g "pdfname"
  
 
 
