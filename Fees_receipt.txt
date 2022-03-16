@@ -21,6 +21,20 @@ sudo hping3 -S <ip_address> -p <port> -c <number_of_packets>
 sudo hping3 --traceroute -V -1 <ip_address> 
 sudo hping3 -a <FAKE IP> <target> -S -q -p 80 --faster     sudo hping3 -a 192.168.225.128 192.168.225.128 -S -q -p 80 --faster
 
+2(a)burp suite
+metasploitable -> cd /var/www/mutillidae -> sudo nano config.inc
+replace metasploitable by owasp10
+Kali
+Browser -> metasploitable ip -> mutillidae
+owasp10 -> A1 -> SQLi-extract data -> user info
+Browser -> preference -> network -> manual proxy -> 127.0.0.1:8080 -> enable ftp & https
+Burpsuit -> Proxy -> intercept on (if off)
+Browser -> mutillidae -> random credentials
+select all -> send to intruder
+Intruder -> positions -> clear -> select name -> add
+	 -> payloads -> load -> /usr/share/wordlist/wfuzz/injections/SQL.txt -> Start attack
+39
+
 2(b) Httrack
 Httrack <url>
 
